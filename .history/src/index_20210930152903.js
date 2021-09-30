@@ -1,9 +1,13 @@
 const express = require('express')
+const morgan = require('morgan')
+const handlebars = require('handlebars')
 const app = express()
 const port = 3000
 
-app.get('/tin-tuc', (req, res) => {
-    res.send('Hello World!')
+app.use(morgan('combined'))
+
+app.get('/', (req, res) => {
+    res.send('hello')
 })
 
 app.listen(port, () => {
